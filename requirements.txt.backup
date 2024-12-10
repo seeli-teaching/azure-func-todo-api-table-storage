@@ -1,0 +1,6 @@
+ipywidgets==8.1.2
+python-dotenv
+azure-functions
+azure-data-tables
+azure-storage-blob
+azure-storage-queue
