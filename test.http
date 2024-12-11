@@ -1,16 +1,7 @@
-
-
 @url = http://localhost:7071/api
 #@url = https://todoapi01ms.azurewebsites.net
 
-### Get all todos
-GET {{url}}/todos
-
-
-### Get todo by id 
-GET {{url}}/todos/0b078315-ce11-4195-8236-0b3f6bea376a
-
-### Create todo
+### Create todo 1
 POST {{url}}/todos
 content-type: application/json
 
@@ -18,7 +9,7 @@ content-type: application/json
     "task": "Go for a walk and talk"
 }
 
-### Create todo
+### Create todo 2
 POST {{url}}/todos
 content-type: application/json
 
@@ -26,22 +17,28 @@ content-type: application/json
     "task": "Cook dinner"
 }
 
-
-### Update todo (just the title)
-PUT {{url}}/todos/10
+### Create todo 3
+POST {{url}}/todos
 content-type: application/json
 
 {
-    "title" : "Do some more work"
+    "task": "Learn Python"
 }
 
-### Update todo (just done)
-PUT {{url}}/todos/0b078315-ce11-4195-8236-0b3f6bea376a
+### Get all todos
+GET {{url}}/todos
+
+@id = hereGoesTheUuid
+### Get todo by id 
+GET {{url}}/todos/{{id}}
+
+### Update status of todo
+PUT {{url}}/todos/{{id}}
 content-type: application/json
 
 {
-    "Status" : "Finished"
+    "status" : "Finished"
 }
 
 ### Delete todo
-DELETE {{url}}/todos/0b078315-ce11-4195-8236-0b3f6bea376a
+DELETE {{url}}/todos/{{id}}
